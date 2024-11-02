@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trab_poo", "trab_poo\trab_poo.csproj", "{83C51E31-5FB5-4324-A0D6-B3D1DA5F1584}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83C51E31-5FB5-4324-A0D6-B3D1DA5F1584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C51E31-5FB5-4324-A0D6-B3D1DA5F1584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C51E31-5FB5-4324-A0D6-B3D1DA5F1584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C51E31-5FB5-4324-A0D6-B3D1DA5F1584}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A7889C0-F553-4B18-8D1B-D6706401F18D}
+	EndGlobalSection
+EndGlobal
