@@ -1,24 +1,41 @@
 ﻿public class Mission
 {
     public string MissionName { get; set; }
-    public string MissionType { get; set; }
-    public int DurationDays { get; set; }
+    public string Objective { get; set; }
 
-    public Mission(string missionName, string missionType, int durationDays)
+    // Construtor que aceita missionName e objective
+    public Mission(string missionName, string objective)
     {
         MissionName = missionName;
-        MissionType = missionType;
-        DurationDays = durationDays;
-    }
-
-    // Método para verificar se a missão é de longo prazo
-    public bool IsLongDuration()
-    {
-        return DurationDays > 30;
+        Objective = objective;
     }
 
     public override string ToString()
     {
-        return $"{MissionName} - {MissionType} Mission ({DurationDays} days)";
+        return $"{MissionName} - Objective: {Objective}";
+    }
+
+    // Retorna uma descrição curta da missão
+    public string ShortDescription()
+    {
+        return $"{MissionName}: {Objective}";
+    }
+
+    // Verifica se a missão tem um objetivo específico
+    public bool HasObjective(string searchObjective)
+    {
+        return Objective.IndexOf(searchObjective, StringComparison.OrdinalIgnoreCase) >= 0;
+    }
+
+    // Formata o nome da missão em letras maiúsculas
+    public string GetMissionNameUppercase()
+    {
+        return MissionName.ToUpper();
+    }
+
+    // Retorna o número de palavras no objetivo
+    public int ObjectiveWordCount()
+    {
+        return Objective.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
     }
 }

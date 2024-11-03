@@ -1,45 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-
-public class Launch
+﻿namespace launch
 {
-    public Rocket Rocket { get; set; }
-    public Mission Mission { get; set; }
-    public string LaunchDate { get; set; }
-    public List<Astronaut> Astronauts { get; set; } = new List<Astronaut>();
-
-    public Launch(Rocket rocket, Mission mission, string launchDate)
+    public class Launch
     {
-        Rocket = rocket;
-        Mission = mission;
-        LaunchDate = launchDate;
-    }
+        public string MissionName { get; set; }
+        public DateTime LaunchDate { get; set; }
+        public string RocketName { get; set; }
 
-    // Método para adicionar um astronauta ao lançamento
-    public void AddAstronaut(Astronaut astronaut)
-    {
-        if (Astronauts.Count < Rocket.Capacity)
+        public Launch(string missionName, DateTime launchDate, string rocketName)
         {
-            Astronauts.Add(astronaut);
+            MissionName = missionName;
+            LaunchDate = launchDate;
+            RocketName = rocketName;
         }
-        else
-        {
-            Console.WriteLine("Cannot add astronaut; rocket is at full capacity.");
-        }
-    }
 
-    // Método para listar todos os astronautas no lançamento
-    public void ListAstronauts()
-    {
-        foreach (var astronaut in Astronauts)
+        public override string ToString()
         {
-            Console.WriteLine(astronaut.ToString());
+            return $"Mission: {MissionName}, Date: {LaunchDate.ToShortDateString()}, Rocket: {RocketName}";
         }
-    }
 
-    public override string ToString()
-    {
-        var astronautNames = string.Join(", ", Astronauts);
-        return $"{Rocket.RocketName} Launch on {LaunchDate} for {Mission.MissionName} with astronauts: {astronautNames}";
+        // Retorna se o lançamento é futuro ou passado
+        public string LaunchStatus()
+        {
+            return DateTime.Now < LaunchDate ? "Upcoming" : "Completed";
+        }
+
+        // Retorna o número de dias restantes até o lançamento
+        public int DaysUntilLaunch()
+        {
+            return (LaunchDate - DateTime.Now).Days;
+        }
+
+        // Retorna uma string simples com o nome da missão e data do lançamento
+        public string BasicInfo()
+        {
+            return $"{MissionName} scheduled for {LaunchDate:MMMM dd, yyyy}";
+        }
     }
 }
