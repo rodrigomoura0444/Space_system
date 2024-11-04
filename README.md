@@ -10,3 +10,16 @@ SpaceAgency: Representa uma agência espacial e contém uma lista de foguetes di
 Rocket: Modela os atributos e capacidades de um foguete, incluindo tipo de combustível e capacidade de carga.
 Mission: Define uma missão com um objetivo específico.
 Launch: Simula um lançamento, incluindo data e foguete utilizado.
+
+🔧 Como Configurar
+
+Clone este repositório:
+bash
+Copiar código
+git clone https://github.com/RODRIGOMOURA0444/SpaceExplorationSimulationSystem.git
+Abra o projeto em uma IDE de C# (recomendo o Visual Studio).
+Compile e execute os exemplos para testar as funcionalidades.
+
+📝 Notas
+
+Este projeto foi criado como uma simulação básica e pode ser expandido para incluir mais funcionalidades, como controle de orçamento da agência, acompanhamento de missões em tempo real e simulações de condições espaciais.
