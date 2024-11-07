@@ -2,9 +2,9 @@
 {
     public class Launch
     {
-        public string MissionName { get; set; }
-        public DateTime LaunchDate { get; set; }
-        public string RocketName { get; set; }
+        public string MissionName { get; set; } // name of the mission
+        public DateTime LaunchDate { get; set; } // date of the mission
+        public string RocketName { get; set; } // e.g , dragon , falcon9 , falcon eavy
 
         public Launch(string missionName, DateTime launchDate, string rocketName)
         {
@@ -18,19 +18,19 @@
             return $"Mission: {MissionName}, Date: {LaunchDate.ToShortDateString()}, Rocket: {RocketName}";
         }
 
-        // Retorna se o lançamento é futuro ou passado
+        //  return if the launch is in the past or in the future
         public string LaunchStatus()
         {
             return DateTime.Now < LaunchDate ? "Upcoming" : "Completed";
         }
 
-        // Retorna o número de dias restantes até o lançamento
+        //  return how many days until the launch 
         public int DaysUntilLaunch()
         {
             return (LaunchDate - DateTime.Now).Days;
         }
 
-        // Retorna uma string simples com o nome da missão e data do lançamento
+        //  return a simple string with the name of the mission and the launch date 
         public string BasicInfo()
         {
             return $"{MissionName} scheduled for {LaunchDate:MMMM dd, yyyy}";

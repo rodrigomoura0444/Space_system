@@ -2,9 +2,9 @@
 {
     public class Astronaut
     {
-        public string Name { get; set; }
-        public string Role { get; set; }  // e.g., Commander, Pilot, Mission Specialist
-        public int ExperienceYears { get; set; }  // Years of experience in space missions
+        public string Name { get; set; } // Astronaut s name
+        public string Role { get; set; }  // e.g , Commander, Pilot, Mission Specialist
+        public int ExperienceYears { get; set; }  // Years of experience 
 
         public Astronaut(string name, string role, int experienceYears)
         {
@@ -13,7 +13,7 @@
             ExperienceYears = experienceYears;
         }
 
-        // Função para verificar se o astronauta é experiente (5+ anos de experiência)
+        // Function to verify if the astronaut had more than 5 years of experience
         public bool IsExperienced()
         {
             return ExperienceYears >= 5;

@@ -1,9 +1,11 @@
-﻿public class Mission
+﻿namespace Mission
+{
+    public class Mission
 {
     public string MissionName { get; set; }
     public string Objective { get; set; }
 
-    // Construtor que aceita missionName e objective
+
     public Mission(string missionName, string objective)
     {
         MissionName = missionName;
@@ -33,9 +35,12 @@
         return MissionName.ToUpper();
     }
 
-    // Retorna o número de palavras no objetivo
+    
     public int ObjectiveWordCount()
     {
+
         return Objective.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
     }
 }
+}
+   

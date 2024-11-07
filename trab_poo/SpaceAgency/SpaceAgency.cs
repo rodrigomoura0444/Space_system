@@ -25,13 +25,13 @@ namespace SpaceAgency
             return $"{AgencyName} ({Country}) - {Rockets.Count} rockets available";
         }
 
-        // Função para contar o número de foguetes disponíveis
+        // function to count how many rockets exist
         public int RocketCount()
         {
             return Rockets.Count;
         }
 
-        // Função para listar o nome de todos os foguetes
+        // list the name of the rockets
         public List<string> GetRocketNames()
         {
             return Rockets.Select(r => r.RocketName).ToList();
