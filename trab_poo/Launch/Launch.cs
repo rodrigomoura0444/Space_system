@@ -30,7 +30,7 @@
             return (LaunchDate - DateTime.Now).Days;
         }
 
-        //  return a simple string with the name of the mission and the launch date 
+        //  return a simple string with the name of the mission and the launch date
         public string BasicInfo()
         {
             return $"{MissionName} scheduled for {LaunchDate:MMMM dd, yyyy}";
