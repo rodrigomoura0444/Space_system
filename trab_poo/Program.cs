@@ -1,4 +1,4 @@
-namespace trab_poo
+    namespace trab_poo
 {
     internal static class Program
     {

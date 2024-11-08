@@ -20,7 +20,7 @@ namespace Launch
         /// <summary>
         /// The name of the space mission.
         /// </summary>
-        public string MissionName { get; private set; }
+        public string MissionName { get;  set; }
 
         /// <summary>
         /// The date of the launch.

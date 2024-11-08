@@ -37,12 +37,12 @@ namespace Astronaut
         /// <summary>
         /// Gets or sets the role of the astronaut, defined by the RoleType enumeration.
         /// </summary>
-        public RoleType Role { get; set; }
+        public RoleType Role { get; private set; }
 
         /// <summary>
         /// Gets or sets the years of experience the astronaut has.
         /// </summary>
-        public int ExperienceYears { get; set; }
+        public int ExperienceYears { get; private set; }
 
         #endregion
 

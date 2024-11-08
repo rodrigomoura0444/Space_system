@@ -23,12 +23,12 @@ namespace SpaceAgency
         /// <summary>
         /// The name of the space agency.
         /// </summary>
-        public string AgencyName { get; set; }
+        public string AgencyName { get; private set; }
 
         /// <summary>
         /// The country where the space agency is based.
         /// </summary>
-        public string Country { get; set; }
+        public string Country { get;  private set ; }
 
         /// <summary>
         /// A list of rockets owned by the space agency.
