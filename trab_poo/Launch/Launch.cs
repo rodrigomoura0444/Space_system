@@ -1,4 +1,4 @@
-﻿namespace LaunchNamespace
+﻿namespace Launch
 {
     /// <summary>
     /// Represents a space mission launch with information about the mission, date, and rocket.

@@ -1,4 +1,5 @@
-﻿namespace SpaceProgram
+﻿namespace SpaceAgency
+
 {
     /// <summary>
     /// Represents a rocket used for space missions.

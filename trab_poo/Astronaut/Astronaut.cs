@@ -8,7 +8,7 @@
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
-namespace AstronautNamespace
+namespace Astronaut
 {
     /// <summary>
     /// Enumeration representing various astronaut roles.
