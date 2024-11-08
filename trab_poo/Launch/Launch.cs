@@ -1,4 +1,14 @@
-﻿namespace Launch
+﻿//-----------------------------------------------------------------
+//    <copyright file="Launch.cs" company="IPCA">
+//     Copyright IPCA-EST. All rights reserved.
+//    </copyright>
+//    <date>31-10-2024</date>
+//    <time>21:00</time>
+//    <version>0.1</version>
+//    <author>Rodrigo Moura</author>
+//-----------------------------------------------------------------
+
+namespace Launch
 {
     /// <summary>
     /// Represents a space mission launch with information about the mission, date, and rocket.

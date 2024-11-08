@@ -1,4 +1,14 @@
-﻿namespace Mission
+﻿//-----------------------------------------------------------------
+//    <copyright file="Mission.cs" company="IPCA">
+//     Copyright IPCA-EST. All rights reserved.
+//    </copyright>
+//    <date>31-10-2024</date>
+//    <time>21:00</time>
+//    <version>0.1</version>
+//    <author>Rodrigo Moura</author>
+//-----------------------------------------------------------------
+
+namespace Mission
 {
     /// <summary>
     /// Represents a space mission with its name and objective.
