@@ -1,39 +1,77 @@
-﻿namespace launch
+﻿namespace LaunchNamespace
 {
+    /// <summary>
+    /// Represents a space mission launch with information about the mission, date, and rocket.
+    /// </summary>
     public class Launch
     {
-        public string MissionName { get; set; } // name of the mission
-        public DateTime LaunchDate { get; set; } // date of the mission
-        public string RocketName { get; set; } // e.g , dragon , falcon9 , falcon eavy
+        #region Public Properties
 
+        /// <summary>
+        /// The name of the space mission.
+        /// </summary>
+        public string MissionName { get; private set; }
+
+        /// <summary>
+        /// The date of the launch.
+        /// </summary>
+        public DateTime LaunchDate { get; private set; }
+
+        /// <summary>
+        /// The name of the rocket used for the launch.
+        /// </summary>
+        public string RocketName { get; private set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructor to initialize a launch with mission name, launch date, and rocket name.
+        /// </summary>
+        /// <param name="missionName">The name of the mission.</param>
+        /// <param name="launchDate">The date of the launch.</param>
+        /// <param name="rocketName">The name of the rocket.</param>
+        /// <exception cref="ArgumentException">Thrown when the mission name or rocket name is null or empty, or if the launch date is in the past.</exception>
         public Launch(string missionName, DateTime launchDate, string rocketName)
         {
+            if (string.IsNullOrWhiteSpace(missionName))
+                throw new ArgumentException("Mission name cannot be null or empty.", nameof(missionName));
+
+            if (string.IsNullOrWhiteSpace(rocketName))
+                throw new ArgumentException("Rocket name cannot be null or empty.", nameof(rocketName));
+
+            if (launchDate <= DateTime.Now)
+                throw new ArgumentException("Launch date must be in the future.", nameof(launchDate));
+
             MissionName = missionName;
             LaunchDate = launchDate;
             RocketName = rocketName;
         }
 
-        public override string ToString()
-        {
-            return $"Mission: {MissionName}, Date: {LaunchDate.ToShortDateString()}, Rocket: {RocketName}";
-        }
+        #endregion
 
-        //  return if the launch is in the past or in the future
-        public string LaunchStatus()
-        {
-            return DateTime.Now < LaunchDate ? "Upcoming" : "Completed";
-        }
+        #region Public Methods
 
-        //  return how many days until the launch 
+        /// <summary>
+        /// Returns the number of days remaining until the launch.
+        /// </summary>
+        /// <returns>Number of days until the launch. If the launch date has passed, returns 0.</returns>
         public int DaysUntilLaunch()
         {
-            return (LaunchDate - DateTime.Now).Days;
+            int daysUntil = (LaunchDate - DateTime.Now).Days;
+            return daysUntil > 0 ? daysUntil : 0;
         }
 
-        //  return a simple string with the name of the mission and the launch date
+        /// <summary>
+        /// Returns a simple string with the mission name and launch date formatted.
+        /// </summary>
+        /// <returns>A basic information string with the mission name and launch date.</returns>
         public string BasicInfo()
         {
             return $"{MissionName} scheduled for {LaunchDate:MMMM dd, yyyy}";
         }
+
+        #endregion
     }
 }

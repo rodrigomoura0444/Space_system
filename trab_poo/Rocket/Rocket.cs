@@ -1,32 +1,103 @@
-﻿public class Rocket
+﻿namespace SpaceProgram
 {
-    public string RocketName { get; set; }
-    public string FuelType { get; set; }
-    public int Capacity { get; set; }       // Número de pessoas que o foguete pode transportar
-    public double MaxPayload { get; set; }   // Capacidade máxima de carga em toneladas
-
-    public Rocket(string rocketName, string fuelType, int capacity, double maxPayload)
+    /// <summary>
+    /// Represents a rocket used for space missions.
+    /// </summary>
+    public class Rocket
     {
-        RocketName = rocketName;
-        FuelType = fuelType;
-        Capacity = capacity;
-        MaxPayload = maxPayload;
-    }
+        #region Properties
 
-    // Verifica se o foguete pode transportar uma carga específica
-    public bool CanCarryPayload(double payloadWeight)
-    {
-        return payloadWeight <= MaxPayload;
-    }
+        /// <summary>
+        /// The name of the rocket.
+        /// </summary>
+        public string RocketName { get; private set; }
 
-    // Retorna uma descrição simples do foguete
-    public string BasicInfo()
-    {
-        return $"{RocketName}: {FuelType} fuel, Capacity: {Capacity} people, Max Payload: {MaxPayload} tons";
-    }
+        /// <summary>
+        /// The type of fuel used by the rocket.
+        /// </summary>
+        public string FuelType { get; private set; }
 
-    public override string ToString()
-    {
-        return BasicInfo();
+        /// <summary>
+        /// The capacity of the rocket (number of people it can transport).
+        /// </summary>
+        public int Capacity { get; private set; }
+
+        /// <summary>
+        /// The maximum payload the rocket can carry (in tons).
+        /// </summary>
+        public double MaxPayload { get; private set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new rocket instance with specified properties.
+        /// </summary>
+        /// <param name="rocketName">Name of the rocket.</param>
+        /// <param name="fuelType">Type of fuel used by the rocket.</param>
+        /// <param name="capacity">Capacity of the rocket (number of people it can carry).</param>
+        /// <param name="maxPayload">Maximum payload the rocket can carry (in tons).</param>
+        /// <exception cref="ArgumentException">Thrown when invalid values are provided for the rocket's properties.</exception>
+        public Rocket(string rocketName, string fuelType, int capacity, double maxPayload)
+        {
+            if (string.IsNullOrWhiteSpace(rocketName))
+                throw new ArgumentException("Rocket name cannot be null or empty.", nameof(rocketName));
+
+            if (string.IsNullOrWhiteSpace(fuelType))
+                throw new ArgumentException("Fuel type cannot be null or empty.", nameof(fuelType));
+
+            if (capacity <= 0)
+                throw new ArgumentException("Capacity must be greater than zero.", nameof(capacity));
+
+            if (maxPayload <= 0)
+                throw new ArgumentException("Max payload must be greater than zero.", nameof(maxPayload));
+
+            RocketName = rocketName;
+            FuelType = fuelType;
+            Capacity = capacity;
+            MaxPayload = maxPayload;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Checks if the rocket can carry a specific payload weight.
+        /// </summary>
+        /// <param name="payloadWeight">The weight of the payload (in tons).</param>
+        /// <returns>True if the payload is within the rocket's maximum capacity, otherwise false.</returns>
+        public bool CanCarryPayload(double payloadWeight)
+        {
+            if (payloadWeight <= 0)
+                throw new ArgumentException("Payload weight must be greater than zero.", nameof(payloadWeight));
+
+            return payloadWeight <= MaxPayload;
+        }
+
+        /// <summary>
+        /// Returns a brief description of the rocket, including name, fuel type, capacity, and max payload.
+        /// </summary>
+        /// <returns>A string containing basic information about the rocket.</returns>
+        public string BasicInfo()
+        {
+            return $"{RocketName}: {FuelType} fuel, Capacity: {Capacity} people, Max Payload: {MaxPayload} tons";
+        }
+
+        #endregion
+
+        #region Override Methods
+
+        /// <summary>
+        /// Returns a string representation of the rocket, including basic information.
+        /// </summary>
+        /// <returns>A string containing the basic info of the rocket.</returns>
+        public override string ToString()
+        {
+            return BasicInfo();
+        }
+
+        #endregion
     }
 }
