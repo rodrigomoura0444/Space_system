@@ -8,7 +8,7 @@
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
-namespace ModelsPOO.models.Rocket
+namespace ModelsPOO.models.CRocket
 
 {
     /// <summary>
