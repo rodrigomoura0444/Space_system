@@ -10,8 +10,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using ModelsPOO.models.Rocket;
 
-namespace SpaceAgency
+namespace ModelsPOO.models.SpaceAgency
 {
     /// <summary>
     /// Represents a space agency with details about its rockets.
@@ -27,8 +28,8 @@ namespace SpaceAgency
 
         /// <summary>
         /// The country where the space agency is based.
-        /// </summary>
-        public string Country { get;  private set ; }
+        /// </summary>  
+        public string Country { get; private set; }
 
         /// <summary>
         /// A list of rockets owned by the space agency.

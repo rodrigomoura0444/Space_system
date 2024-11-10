@@ -8,7 +8,7 @@
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
-namespace Astronaut
+namespace ModelsPOO.models.Astronaut
 {
     /// <summary>
     /// Enumeration representing various astronaut roles.
@@ -19,7 +19,11 @@ namespace Astronaut
         Pilot,
         MissionSpecialist,
         Engineer,
-        Scientist
+        Scientist,
+        FlightEngineer,
+        PayloadSpecialist,
+
+
     }
 
     /// <summary>
@@ -96,3 +100,8 @@ namespace Astronaut
         #endregion
     }
 }
+
+
+
+
+

@@ -8,12 +8,12 @@
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
-namespace Mission
+namespace ModelsPOO.models.Mission
 {
     /// <summary>
     /// Represents a space mission with its name and objective.
     /// </summary>
-    public class Mission
+    public class CMission
     {
         #region Properties
 
@@ -37,7 +37,7 @@ namespace Mission
         /// <param name="missionName">The name of the mission.</param>
         /// <param name="objective">The objective of the mission.</param>
         /// <exception cref="ArgumentException">Thrown when missionName or objective is null or empty.</exception>
-        public Mission(string missionName, string objective)
+        public CMission(string missionName, string objective)
         {
             if (string.IsNullOrWhiteSpace(missionName))
                 throw new ArgumentException("Mission name cannot be null or empty.", nameof(missionName));

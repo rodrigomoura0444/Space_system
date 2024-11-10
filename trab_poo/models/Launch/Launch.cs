@@ -8,7 +8,7 @@
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
-namespace Launch
+namespace ModelsPOO.models.Launch
 {
     /// <summary>
     /// Represents a space mission launch with information about the mission, date, and rocket.
@@ -20,7 +20,7 @@ namespace Launch
         /// <summary>
         /// The name of the space mission.
         /// </summary>
-        public string MissionName { get;  set; }
+        public string MissionName { get; set; }
 
         /// <summary>
         /// The date of the launch.
