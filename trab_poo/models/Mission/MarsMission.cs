@@ -23,6 +23,8 @@ namespace ModelsPOO.models.Mission
         /// </summary>
         public string MissionType { get; }
 
+       
+
         #endregion
 
         #region Constructors
