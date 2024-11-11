@@ -8,13 +8,13 @@
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
-namespace ModelsPOO.models.CRocket
+namespace ModelsPOO.models.Launch
 
 {
     /// <summary>
     /// Represents a rocket used for space missions.
     /// </summary>
-    public class Rocket
+    public class Rocket : CLau
     {
         #region Properties
 

@@ -10,7 +10,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using ModelsPOO.models.CRocket;
+using ModelsPOO.models.Launch;
 
 namespace ModelsPOO.models.SpaceAgency
 {
