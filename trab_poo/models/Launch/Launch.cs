@@ -11,24 +11,25 @@
 namespace ModelsPOO.models.Launch
 {
     /// <summary>
-    /// Represents a space mission launch with information about the mission, date, and rocket.
+    /// Class representing a launch mission, including the mission name,
+    /// launch date, and the associated rocket.
     /// </summary>
-    public class Launch
+    public class CLaunch
     {
         #region Public Properties
 
         /// <summary>
-        /// The name of the space mission.
+        /// Gets or sets the name of the mission (e.g., "Apollo 11").
         /// </summary>
         public string MissionName { get; set; }
 
         /// <summary>
-        /// The date of the launch.
+        /// Gets the date of the launch. This property is read-only externally.
         /// </summary>
         public DateTime LaunchDate { get; private set; }
 
         /// <summary>
-        /// The name of the rocket used for the launch.
+        /// Gets the name of the rocket used for the mission. This property is read-only externally.
         /// </summary>
         public string RocketName { get; private set; }
 
@@ -37,23 +38,27 @@ namespace ModelsPOO.models.Launch
         #region Constructors
 
         /// <summary>
-        /// Constructor to initialize a launch with mission name, launch date, and rocket name.
+        /// Initializes a new instance of the <see cref="CLaunch"/> class with mission name, launch date, and rocket name.
         /// </summary>
-        /// <param name="missionName">The name of the mission.</param>
-        /// <param name="launchDate">The date of the launch.</param>
-        /// <param name="rocketName">The name of the rocket.</param>
-        /// <exception cref="ArgumentException">Thrown when the mission name or rocket name is null or empty, or if the launch date is in the past.</exception>
-        public Launch(string missionName, DateTime launchDate, string rocketName)
+        /// <param name="missionName">The name of the mission (e.g., "Apollo 11").</param>
+        /// <param name="launchDate">The scheduled date for the launch (must be in the future).</param>
+        /// <param name="rocketName">The name of the rocket used for the mission (e.g., "Falcon 9").</param>
+        /// <exception cref="ArgumentException">Thrown if any parameter is invalid (e.g., empty or past date).</exception>
+        public CLaunch(string missionName, DateTime launchDate, string rocketName)
         {
+            // Validate that mission name is not null or empty
             if (string.IsNullOrWhiteSpace(missionName))
                 throw new ArgumentException("Mission name cannot be null or empty.", nameof(missionName));
 
+            // Validate that rocket name is not null or empty
             if (string.IsNullOrWhiteSpace(rocketName))
                 throw new ArgumentException("Rocket name cannot be null or empty.", nameof(rocketName));
 
+            // Validate that the launch date is in the future
             if (launchDate <= DateTime.Now)
                 throw new ArgumentException("Launch date must be in the future.", nameof(launchDate));
 
+            // Assign values to properties
             MissionName = missionName;
             LaunchDate = launchDate;
             RocketName = rocketName;
@@ -64,9 +69,9 @@ namespace ModelsPOO.models.Launch
         #region Public Methods
 
         /// <summary>
-        /// Returns the number of days remaining until the launch.
+        /// Calculates how many days are left until the launch.
         /// </summary>
-        /// <returns>Number of days until the launch. If the launch date has passed, returns 0.</returns>
+        /// <returns>The number of days until the launch. Returns 0 if the launch date is today or in the past.</returns>
         public int DaysUntilLaunch()
         {
             int daysUntil = (LaunchDate - DateTime.Now).Days;
@@ -74,9 +79,9 @@ namespace ModelsPOO.models.Launch
         }
 
         /// <summary>
-        /// Returns a simple string with the mission name and launch date formatted.
+        /// Returns a brief summary of the mission, including the mission name and the scheduled launch date.
         /// </summary>
-        /// <returns>A basic information string with the mission name and launch date.</returns>
+        /// <returns>A string with the mission name and the launch date in a readable format.</returns>
         public string BasicInfo()
         {
             return $"{MissionName} scheduled for {LaunchDate:MMMM dd, yyyy}";

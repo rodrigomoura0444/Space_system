@@ -9,104 +9,65 @@
 //-----------------------------------------------------------------
 
 namespace ModelsPOO.models.Launch
-
 {
     /// <summary>
-    /// Represents a rocket used for space missions.
+    /// Class representing a rocket, including its name, weight, and the ability to simulate a launch.
     /// </summary>
-    public class Rocket : CLau
+    public class Rocket
     {
-        #region Properties
+        #region Public Properties
 
         /// <summary>
-        /// The name of the rocket.
+        /// Gets or sets the name of the rocket (e.g., "Falcon Heavy").
         /// </summary>
-        public string RocketName { get; private set; }
+        public string RocketName { get; set; }
 
         /// <summary>
-        /// The type of fuel used by the rocket.
+        /// Gets or sets the name of the rocket (e.g., "Falcon Heavy").
+        /// This property serves as an alias for RocketName.
         /// </summary>
-        public string FuelType { get; private set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// The capacity of the rocket (number of people it can transport).
+        /// Gets or sets the weight of the rocket in tons.
         /// </summary>
-        public int Capacity { get; private set; }
-
-        /// <summary>
-        /// The maximum payload the rocket can carry (in tons).
-        /// </summary>
-        public double MaxPayload { get; private set; }
+        public double Weight { get; set; }
 
         #endregion
 
         #region Constructors
 
         /// <summary>
-        /// Initializes a new rocket instance with specified properties.
+        /// Initializes a new instance of the <see cref="Rocket"/> class with the specified name and weight.
         /// </summary>
-        /// <param name="rocketName">Name of the rocket.</param>
-        /// <param name="fuelType">Type of fuel used by the rocket.</param>
-        /// <param name="capacity">Capacity of the rocket (number of people it can carry).</param>
-        /// <param name="maxPayload">Maximum payload the rocket can carry (in tons).</param>
-        /// <exception cref="ArgumentException">Thrown when invalid values are provided for the rocket's properties.</exception>
-        public Rocket(string rocketName, string fuelType, int capacity, double maxPayload)
+        /// <param name="name">The name of the rocket (e.g., "Falcon Heavy").</param>
+        /// <param name="weight">The weight of the rocket in tons.</param>
+        /// <exception cref="ArgumentException">Thrown if the rocket name is null, empty, or the weight is non-positive.</exception>
+        public Rocket(string name, double weight)
         {
-            if (string.IsNullOrWhiteSpace(rocketName))
-                throw new ArgumentException("Rocket name cannot be null or empty.", nameof(rocketName));
+            // Validate that the rocket name is not null or empty
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Rocket name cannot be null or empty.", nameof(name));
 
-            if (string.IsNullOrWhiteSpace(fuelType))
-                throw new ArgumentException("Fuel type cannot be null or empty.", nameof(fuelType));
+            // Validate that the rocket weight is positive
+            if (weight <= 0)
+                throw new ArgumentException("Rocket weight must be greater than zero.", nameof(weight));
 
-            if (capacity <= 0)
-                throw new ArgumentException("Capacity must be greater than zero.", nameof(capacity));
-
-            if (maxPayload <= 0)
-                throw new ArgumentException("Max payload must be greater than zero.", nameof(maxPayload));
-
-            RocketName = rocketName;
-            FuelType = fuelType;
-            Capacity = capacity;
-            MaxPayload = maxPayload;
+            // Assign values to properties
+            Name = name;
+            Weight = weight;
         }
 
         #endregion
 
-        #region Methods
+        #region Public Methods
 
         /// <summary>
-        /// Checks if the rocket can carry a specific payload weight.
+        /// Simulates the rocket launching by outputting the rocket's name and weight to the console.
         /// </summary>
-        /// <param name="payloadWeight">The weight of the payload (in tons).</param>
-        /// <returns>True if the payload is within the rocket's maximum capacity, otherwise false.</returns>
-        public bool CanCarryPayload(double payloadWeight)
+        public void LaunchRocket()
         {
-            if (payloadWeight <= 0)
-                throw new ArgumentException("Payload weight must be greater than zero.", nameof(payloadWeight));
-
-            return payloadWeight <= MaxPayload;
-        }
-
-        /// <summary>
-        /// Returns a brief description of the rocket, including name, fuel type, capacity, and max payload.
-        /// </summary>
-        /// <returns>A string containing basic information about the rocket.</returns>
-        public string BasicInfo()
-        {
-            return $"{RocketName}: {FuelType} fuel, Capacity: {Capacity} people, Max Payload: {MaxPayload} tons";
-        }
-
-        #endregion
-
-        #region Override Methods
-
-        /// <summary>
-        /// Returns a string representation of the rocket, including basic information.
-        /// </summary>
-        /// <returns>A string containing the basic info of the rocket.</returns>
-        public override string ToString()
-        {
-            return BasicInfo();
+            Console.WriteLine($"Rocket {Name} (Weight: {Weight} tons) is ready to launch!");
         }
 
         #endregion

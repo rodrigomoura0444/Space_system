@@ -4,110 +4,64 @@
 //    </copyright>
 //    <date>31-10-2024</date>
 //    <time>21:00</time>
-//    <version>0.2</version>
+//    <version>0.1</version>
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
 namespace ModelsPOO.models.Launch
 {
     /// <summary>
-    /// Enumeration representing various astronaut roles.
-    /// </summary>
-    public enum RoleType
-    {
-        Commander,
-        Pilot,
-        MissionSpecialist,
-        Engineer,
-        Scientist,
-        FlightEngineer,
-        PayloadSpecialist
-    }
-
-    /// <summary>
-    /// Represents an astronaut with a name, role, and years of experience.
+    /// Class representing an astronaut, including their name, rank, and the ability to prepare for launch.
     /// </summary>
     public class Astronaut
     {
-        #region Private Properties
-
-        private string name { get; set; }
-        private RoleType role { get; set; }
-        private int experienceYears { get; set; }
-
-        #endregion
-
         #region Public Properties
 
-        public string Name { get => name; set => name = value; }
+        /// <summary>
+        /// Gets or sets the name of the astronaut (e.g., "Neil Armstrong").
+        /// </summary>
+        public string Name { get; set; }
 
-        public RoleType Role
-        {
-            get => role;
-            private set => role = value;
-        }
-
-        public int ExperienceYears
-        {
-            get => experienceYears;
-            private set => experienceYears = value;
-        }
+        /// <summary>
+        /// Gets or sets the rank of the astronaut (e.g., "Commander").
+        /// </summary>
+        public string Rank { get; set; }
 
         #endregion
 
         #region Constructors
 
         /// <summary>
-        /// Constructor with parameters for name, role, and experience years.
+        /// Initializes a new instance of the <see cref="Astronaut"/> class with the specified name and rank.
         /// </summary>
-        /// <param name="name">The name of the astronaut.</param>
-        /// <param name="role">The role of the astronaut.</param>
-        /// <param name="experienceYears">Years of experience of the astronaut.</param>
-        /// <exception cref="ArgumentException">Thrown if experienceYears is negative or name is null/empty.</exception>
-        public Astronaut(string name, RoleType role, int experienceYears)
+        /// <param name="name">The name of the astronaut (e.g., "Neil Armstrong").</param>
+        /// <param name="rank">The rank of the astronaut (e.g., "Commander").</param>
+        /// <exception cref="ArgumentException">Thrown if the astronaut name or rank is null or empty.</exception>
+        public Astronaut(string name, string rank)
         {
+            // Validate that the astronaut name is not null or empty
             if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentException("Name cannot be null or empty.", nameof(name));
+                throw new ArgumentException("Astronaut name cannot be null or empty.", nameof(name));
 
-            if (experienceYears < 0)
-                throw new ArgumentException("Experience years cannot be negative.", nameof(experienceYears));
+            // Validate that the astronaut rank is not null or empty
+            if (string.IsNullOrWhiteSpace(rank))
+                throw new ArgumentException("Astronaut rank cannot be null or empty.", nameof(rank));
 
-            this.name = name;
-            this.role = role;
-            this.experienceYears = experienceYears;
+            // Assign values to properties
+            Name = name;
+            Rank = rank;
         }
 
         #endregion
 
         #region Public Methods
 
-        public bool IsExperienced()
+        /// <summary>
+        /// Simulates the astronaut preparing for the launch by outputting the astronaut's name and rank to the console.
+        /// </summary>
+        public void PrepareForLaunch()
         {
-            return ExperienceYears >= 5;
-        }
-
-        public void UpdateRole(RoleType newRole)
-        {
-            Role = newRole;
-        }
-
-        public void AddExperience(int years)
-        {
-            if (years < 0)
-                throw new ArgumentException("Experience years to add cannot be negative.", nameof(years));
-
-            ExperienceYears += years;
-        }
-
-        public string GetDetailedDescription()
-        {
-            string experienceLevel = IsExperienced() ? "Experienced" : "Less Experienced";
-            return $"{Name}, a {Role} with {ExperienceYears} years of experience. Status: {experienceLevel}.";
-        }
-
-        public override string ToString()
-        {
-            return $"{Name} - {Role} ({ExperienceYears} years)";
+            Console.WriteLine($"Astronaut {Name}, {Rank}, is preparing for the launch.");
         }
 
         #endregion

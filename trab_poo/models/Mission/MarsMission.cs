@@ -1,77 +1,61 @@
-﻿using System;
+﻿//-----------------------------------------------------------------
+//    <copyright file="MarsMission.cs" company="IPCA">
+//     Copyright IPCA-EST. All rights reserved.
+//    </copyright>
+//    <date>31-10-2024</date>
+//    <time>21:00</time>
+//    <version>0.1</version>
+//    <author>Rodrigo Moura</author>
+//-----------------------------------------------------------------
 
 namespace ModelsPOO.models.Mission
 {
     /// <summary>
-    /// Represents a mission specifically targeting Mars.
+    /// Represents a space mission specifically aimed at Mars exploration.
+    /// Inherits from CMission and adds additional functionality or characteristics related to Mars missions.
     /// </summary>
     public class MarsMission : CMission
     {
-        /// <summary>
-        /// The duration of the Mars mission in days.
-        /// </summary>
-        public int MissionDuration { get; private set; }
+        #region Properties
 
         /// <summary>
-        /// Indicates whether the mission is manned or unmanned.
+        /// The type of Mars mission (e.g., "Orbital", "Landing").
         /// </summary>
-        public bool IsManned { get; private set; }
+        public string MissionType { get; }
+
+        #endregion
+
+        #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the MarsMission class.
+        /// Initializes a new instance of the <see cref="MarsMission"/> class.
         /// </summary>
-        /// <param name="missionName">The name of the mission.</param>
-        /// <param name="objective">The objective of the mission.</param>
-        /// <param name="missionDuration">The duration of the mission in days.</param>
-        /// <param name="isManned">True if the mission is manned; otherwise, false.</param>
-        /// <exception cref="ArgumentException">Thrown when the mission name, objective, or mission duration is invalid.</exception>
-        public MarsMission(string missionName, string objective, int missionDuration, bool isManned)
+        /// <param name="missionName">The name of the Mars mission (e.g., "Mars 2024").</param>
+        /// <param name="objective">The objective of the mission (e.g., "Land on Mars").</param>
+        /// <param name="missionType">The type of Mars mission (e.g., "Landing", "Orbital").</param>
+        /// <exception cref="ArgumentException">Thrown when missionName, objective, or missionType is null or empty.</exception>
+        public MarsMission(string missionName, string objective, string missionType)
             : base(missionName, objective)
         {
-            if (string.IsNullOrWhiteSpace(missionName))
-                throw new ArgumentException("Mission name cannot be null or empty.", nameof(missionName));
+            if (string.IsNullOrWhiteSpace(missionType))
+                throw new ArgumentException("Mission type cannot be null or empty.", nameof(missionType));
 
-            if (string.IsNullOrWhiteSpace(objective))
-                throw new ArgumentException("Objective cannot be null or empty.", nameof(objective));
-
-            if (missionDuration <= 0)
-                throw new ArgumentException("Mission duration must be a positive number.", nameof(missionDuration));
-
-            MissionDuration = missionDuration;
-            IsManned = isManned;
+            MissionType = missionType;
         }
+
+        #endregion
+
+        #region Methods
 
         /// <summary>
-        /// Updates the mission duration, if needed.
+        /// Provides a detailed description of the Mars mission, including its type.
         /// </summary>
-        /// <param name="newDuration">The new mission duration in days.</param>
-        /// <exception cref="ArgumentException">Thrown when the new duration is not positive.</exception>
-        public void UpdateMissionDuration(int newDuration)
+        /// <returns>A string with the mission name, objective, and mission type.</returns>
+        public string DetailedDescription()
         {
-            if (newDuration <= 0)
-                throw new ArgumentException("Mission duration must be a positive number.", nameof(newDuration));
-
-            MissionDuration = newDuration;
+            return $"{MissionName}: {Objective} (Mission Type: {MissionType})";
         }
 
-        /// <summary>
-        /// Calculates the end date of the mission based on a given start date.
-        /// </summary>
-        /// <param name="startDate">The start date of the mission.</param>
-        /// <returns>The end date of the mission.</returns>
-        public DateTime CalculateEndDate(DateTime startDate)
-        {
-            return startDate.AddDays(MissionDuration);
-        }
-
-        /// <summary>
-        /// Returns a string representation of the Mars mission.
-        /// </summary>
-        /// <returns>A string with the mission details.</returns>
-        public override string ToString()
-        {
-            string missionType = IsManned ? "Manned" : "Unmanned";
-            return $"{base.ToString()} - Objective: {Objective} - Duration: {MissionDuration} days - Type: {missionType}";
-        }
+        #endregion
     }
 }

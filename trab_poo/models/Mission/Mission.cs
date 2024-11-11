@@ -18,12 +18,12 @@ namespace ModelsPOO.models.Mission
         #region Properties
 
         /// <summary>
-        /// The name of the mission.
+        /// The name of the mission (e.g., "Mars 2024").
         /// </summary>
         public string MissionName { get; }
 
         /// <summary>
-        /// The objective of the mission.
+        /// The objective of the mission (e.g., "Land on Mars").
         /// </summary>
         public string Objective { get; }
 
@@ -32,19 +32,22 @@ namespace ModelsPOO.models.Mission
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the Mission class.
+        /// Initializes a new instance of the <see cref="CMission"/> class.
         /// </summary>
         /// <param name="missionName">The name of the mission.</param>
         /// <param name="objective">The objective of the mission.</param>
         /// <exception cref="ArgumentException">Thrown when missionName or objective is null or empty.</exception>
         public CMission(string missionName, string objective)
         {
+            // Validate that mission name is not null or empty
             if (string.IsNullOrWhiteSpace(missionName))
                 throw new ArgumentException("Mission name cannot be null or empty.", nameof(missionName));
 
+            // Validate that mission objective is not null or empty
             if (string.IsNullOrWhiteSpace(objective))
                 throw new ArgumentException("Mission objective cannot be null or empty.", nameof(objective));
 
+            // Assign values to properties
             MissionName = missionName;
             Objective = objective;
         }
