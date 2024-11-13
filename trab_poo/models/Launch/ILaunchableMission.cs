@@ -1,4 +1,6 @@
-﻿namespace ModelsPOO.models.Launch
+﻿// interface de LAUNCH
+
+namespace ModelsPOO.models.Launch
 {
     public interface ILaunchableMission
     {
@@ -13,3 +15,4 @@
         string BasicInfo();
     }
 }
+

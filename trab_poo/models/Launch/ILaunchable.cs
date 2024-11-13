@@ -1,4 +1,6 @@
-﻿namespace ModelsPOO.models.Launch
+﻿
+// interface de astronaut
+namespace ModelsPOO.models.Launch
 {
     public interface ILaunchable
     {

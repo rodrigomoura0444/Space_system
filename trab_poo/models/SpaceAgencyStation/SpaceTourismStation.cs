@@ -80,6 +80,9 @@ namespace ModelsPOO.models.SpaceAgency
         /// Removes tourists from the space station. If the number of tourists to remove exceeds the number present, it prevents removal.
         /// </summary>
         /// <param name="quantity">The number of tourists to remove.</param>
+        /// 
+
+       
         public void RemoveTourists(int quantity)
         {
             if (quantity <= 0)

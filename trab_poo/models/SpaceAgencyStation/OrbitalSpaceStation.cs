@@ -8,6 +8,8 @@
 //    <author>Rodrigo Moura</author>
 //-----------------------------------------------------------------
 
+using System.Diagnostics.Contracts;
+
 namespace ModelsPOO.models.SpaceAgency
 {
     /// <summary>
@@ -21,24 +23,28 @@ namespace ModelsPOO.models.SpaceAgency
         /// A lista de módulos que a estação espacial possui.
         /// </summary>
         public List<string> Modules { get; }
+       
 
         /// <summary>
         /// Indica se a estação espacial está em processo de manutenção.
         /// </summary>
         public bool IsUnderMaintenance { get; private set; }
+       
 
-        #endregion
+       
 
-        #region Construtores
+    #endregion
 
-        /// <summary>
-        /// Inicializa uma nova instância da classe <see cref="OrbitalSpaceStation"/>.
-        /// </summary>
-        /// <param name="name">O nome da estação espacial.</param>
-        /// <param name="crewCapacity">A capacidade de tripulantes da estação espacial.</param>
-        /// <param name="inaugurationDate">A data de inauguração da estação espacial.</param>
-        /// <param name="modules">A lista de módulos da estação espacial.</param>
-        public OrbitalSpaceStation(string name, int crewCapacity, DateTime inaugurationDate, List<string> modules)
+    #region Construtores
+
+    /// <summary>
+    /// Inicializa uma nova instância da classe <see cref="OrbitalSpaceStation"/>.
+    /// </summary>
+    /// <param name="name">O nome da estação espacial.</param>
+    /// <param name="crewCapacity">A capacidade de tripulantes da estação espacial.</param>
+    /// <param name="inaugurationDate">A data de inauguração da estação espacial.</param>
+    /// <param name="modules">A lista de módulos da estação espacial.</param>
+    public OrbitalSpaceStation(string name, int crewCapacity, DateTime inaugurationDate, List<string> modules)
             : base(name, crewCapacity, inaugurationDate)
         {
             // Valida que a lista de módulos não é nula
@@ -98,3 +104,4 @@ namespace ModelsPOO.models.SpaceAgency
         #endregion
     }
 }
+

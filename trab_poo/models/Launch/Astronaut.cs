@@ -6,6 +6,7 @@
 
         public string Name { get; set; }
         public string Rank { get; set; }
+        public AstronautRole Role { get; set; }  // New property for the astronaut's role
 
         /// <summary>
         /// Indicates if the astronaut is ready for the launch.
@@ -16,7 +17,7 @@
 
         #region Constructors
 
-        public Astronaut(string name, string rank)
+        public Astronaut(string name, string rank, AstronautRole role)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Astronaut name cannot be null or empty.", nameof(name));
@@ -26,6 +27,7 @@
 
             Name = name;
             Rank = rank;
+            Role = role;
             IsReadyForLaunch = false; // Initially not ready
         }
 
@@ -35,7 +37,7 @@
 
         public void PrepareForLaunch()
         {
-            Console.WriteLine($"Astronaut {Name}, {Rank}, is preparing for the launch.");
+            Console.WriteLine($"Astronaut {Name}, {Rank}, Role: {Role}, is preparing for the launch.");
             IsReadyForLaunch = true; // Mark as ready once the preparation begins
         }
 
