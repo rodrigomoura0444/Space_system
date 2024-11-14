@@ -1,4 +1,6 @@
 ﻿namespace ModelsPOO.models.Launch
+
+
 {
     public class Astronaut : ILaunchable
     {
