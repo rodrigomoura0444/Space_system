@@ -22,7 +22,7 @@ namespace trab_poo
             astronaut2.PrepareForLaunch();
             astronaut3.PrepareForLaunch();
 
-            // Checking if astronauts are ready for launch
+            // Checking if astronauts are ready for launc
             Console.WriteLine($"{astronaut1.Name} is ready for launch: {astronaut1.IsReadyForLaunch}");
             Console.WriteLine($"{astronaut2.Name} is ready for launch: {astronaut2.IsReadyForLaunch}");
             Console.WriteLine($"{astronaut3.Name} is ready for launch: {astronaut3.IsReadyForLaunch}");

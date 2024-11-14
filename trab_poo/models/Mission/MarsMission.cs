@@ -19,7 +19,7 @@ namespace ModelsPOO.models.Mission
         #region Properties
 
         /// <summary>
-        /// The type of Mars mission (e.g., "Orbital", "Landing").
+        /// The type of Mars mission like fot example Landing or orbital
         /// </summary>
         public string MissionType { get; }
 

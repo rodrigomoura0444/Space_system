@@ -13,95 +13,94 @@ using System.Diagnostics.Contracts;
 namespace ModelsPOO.models.SpaceAgency
 {
     /// <summary>
-    /// Representa uma estação espacial orbital, com módulos específicos e capacidade de manutenção.
+    /// Represents an orbital space station, with specific modules and maintenance capability.
     /// </summary>
     public class OrbitalSpaceStation : SpaceStation
     {
-        #region Propriedades
+        #region Properties
 
         /// <summary>
-        /// A lista de módulos que a estação espacial possui.
+        /// The list of modules the space station has.
         /// </summary>
         public List<string> Modules { get; }
-       
+
 
         /// <summary>
-        /// Indica se a estação espacial está em processo de manutenção.
+        /// Indicates if the space station is undergoing maintenance.
         /// </summary>
         public bool IsUnderMaintenance { get; private set; }
-       
 
-       
 
-    #endregion
 
-    #region Construtores
 
-    /// <summary>
-    /// Inicializa uma nova instância da classe <see cref="OrbitalSpaceStation"/>.
-    /// </summary>
-    /// <param name="name">O nome da estação espacial.</param>
-    /// <param name="crewCapacity">A capacidade de tripulantes da estação espacial.</param>
-    /// <param name="inaugurationDate">A data de inauguração da estação espacial.</param>
-    /// <param name="modules">A lista de módulos da estação espacial.</param>
-    public OrbitalSpaceStation(string name, int crewCapacity, DateTime inaugurationDate, List<string> modules)
-            : base(name, crewCapacity, inaugurationDate)
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrbitalSpaceStation"/> class.
+        /// </summary>
+        /// <param name="name">The name of the space station.</param>
+        /// <param name="crewCapacity">The crew capacity of the space station.</param>
+        /// <param name="inaugurationDate">The inauguration date of the space station.</param>
+        /// <param name="modules">The list of modules of the space station.</param>
+        public OrbitalSpaceStation(string name, int crewCapacity, DateTime inaugurationDate, List<string> modules)
+                : base(name, crewCapacity, inaugurationDate)
         {
-            // Valida que a lista de módulos não é nula
+            // Validates that the list of modules is not null
             if (modules == null || modules.Count == 0)
-                throw new ArgumentException("A estação espacial deve ter pelo menos um módulo.", nameof(modules));
+                throw new ArgumentException("The space station must have at least one module.", nameof(modules));
 
             Modules = modules;
-            IsUnderMaintenance = false;  // A estação começa sem manutenção
+            IsUnderMaintenance = false;  // The station starts without maintenance
         }
 
         #endregion
 
-        #region Métodos
+        #region Methods
 
         /// <summary>
-        /// Inicia a manutenção da estação espacial, alterando o status para "em manutenção".
+        /// Starts the maintenance of the space station, changing the status to "under maintenance".
         /// </summary>
         public void StartMaintenance()
         {
             IsUnderMaintenance = true;
-            Console.WriteLine($"A manutenção da estação {Name} foi iniciada.");
+            Console.WriteLine($"The maintenance of the station {Name} has started.");
         }
 
         /// <summary>
-        /// Finaliza a manutenção da estação espacial, alterando o status para "em operação".
+        /// Ends the maintenance of the space station, changing the status to "operational".
         /// </summary>
         public void EndMaintenance()
         {
             IsUnderMaintenance = false;
-            Console.WriteLine($"A manutenção da estação {Name} foi concluída.");
+            Console.WriteLine($"The maintenance of the station {Name} has been completed.");
         }
 
         /// <summary>
-        /// Adiciona um novo módulo à estação espacial.
+        /// Adds a new module to the space station.
         /// </summary>
-        /// <param name="module">O nome do módulo a ser adicionado.</param>
+        /// <param name="module">The name of the module to be added.</param>
         public void AddModule(string module)
         {
             if (string.IsNullOrWhiteSpace(module))
-                throw new ArgumentException("O nome do módulo não pode ser nulo ou vazio.", nameof(module));
+                throw new ArgumentException("The module name cannot be null or empty.", nameof(module));
 
             Modules.Add(module);
-            Console.WriteLine($"O módulo '{module}' foi adicionado à estação {Name}.");
+            Console.WriteLine($"The module '{module}' has been added to the station {Name}.");
         }
 
         /// <summary>
-        /// Exibe informações sobre os módulos e o status de manutenção da estação espacial.
+        /// Displays information about the modules and the maintenance status of the space station.
         /// </summary>
-        /// <returns>Uma string com as informações detalhadas.</returns>
+        /// <returns>A string with detailed information.</returns>
         public string GetOrbitalStationInfo()
         {
-            string maintenanceStatus = IsUnderMaintenance ? "em manutenção" : "em operação";
+            string maintenanceStatus = IsUnderMaintenance ? "under maintenance" : "operational";
             string modulesInfo = string.Join(", ", Modules);
-            return $"{Name} - Capacidade de Tripulantes: {CrewCapacity} - Inauguração: {InaugurationDate:yyyy-MM-dd} - Status: {maintenanceStatus} - Módulos: {modulesInfo}";
+            return $"{Name} - Crew Capacity: {CrewCapacity} - Inauguration: {InaugurationDate:yyyy-MM-dd} - Status: {maintenanceStatus} - Modules: {modulesInfo}";
         }
 
         #endregion
     }
 }
-

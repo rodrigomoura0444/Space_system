@@ -18,12 +18,12 @@ namespace ModelsPOO.models.Launch
         #region Public Properties
 
         /// <summary>
-        /// Gets or sets the name of the rocket (e.g., "Falcon Heavy").
+        /// Gets or sets the name of the rocket like for example Falcon Heavy.
         /// </summary>
         public string RocketName { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of the rocket (e.g., "Falcon Heavy").
+        /// Gets or sets the name of the rocket like Falcon 9 .
         /// This property serves as an alias for RocketName.
         /// </summary>
         public string Name { get; set; }

@@ -11,53 +11,53 @@
 namespace ModelsPOO.models.SpaceAgency
 {
     /// <summary>
-    /// Representa uma estação espacial com nome, capacidade de tripulação e data de inauguração.
+    /// Represents a space station with a name, crew capacity, and inauguration date.
     /// </summary>
     public class SpaceStation
     {
-        #region Propriedades
+        #region Properties
 
         /// <summary>
-        /// O nome da estação espacial (por exemplo, "Estação Espacial Internacional").
+        /// The name of the space station (e.g., "International Space Station").
         /// </summary>
         public string Name { get; }
 
         /// <summary>
-        /// A capacidade de tripulantes da estação espacial.
+        /// The crew capacity of the space station.
         /// </summary>
         public int CrewCapacity { get; }
 
         /// <summary>
-        /// A data de inauguração da estação espacial.
+        /// The inauguration date of the space station.
         /// </summary>
         public DateTime InaugurationDate { get; }
 
         #endregion
 
-        #region Construtores
+        #region Constructors
 
         /// <summary>
-        /// Inicializa uma nova instância da classe <see cref="SpaceStation"/>.
+        /// Initializes a new instance of the <see cref="SpaceStation"/> class.
         /// </summary>
-        /// <param name="name">O nome da estação espacial.</param>
-        /// <param name="crewCapacity">A capacidade de tripulantes da estação espacial.</param>
-        /// <param name="inaugurationDate">A data de inauguração da estação espacial.</param>
-        /// <exception cref="ArgumentException">Lançado quando o nome da estação é nulo ou vazio, ou a capacidade de tripulantes é não positiva.</exception>
+        /// <param name="name">The name of the space station.</param>
+        /// <param name="crewCapacity">The crew capacity of the space station.</param>
+        /// <param name="inaugurationDate">The inauguration date of the space station.</param>
+        /// <exception cref="ArgumentException">Thrown when the station name is null or empty, or the crew capacity is non-positive.</exception>
         public SpaceStation(string name, int crewCapacity, DateTime inaugurationDate)
         {
-            // Valida que o nome da estação não é nulo ou vazio
+            // Validates that the station name is not null or empty
             if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentException("O nome da estação não pode ser nulo ou vazio.", nameof(name));
+                throw new ArgumentException("The name of the station cannot be null or empty.", nameof(name));
 
-            // Valida que a capacidade de tripulantes é um número positivo
+            // Validates that the crew capacity is a positive number
             if (crewCapacity <= 0)
-                throw new ArgumentException("A capacidade de tripulantes deve ser maior que zero.", nameof(crewCapacity));
+                throw new ArgumentException("The crew capacity must be greater than zero.", nameof(crewCapacity));
 
-            // Valida que a data de inauguração não está no futuro
+            // Validates that the inauguration date is not in the future
             if (inaugurationDate > DateTime.Now)
-                throw new ArgumentException("A data de inauguração não pode ser no futuro.", nameof(inaugurationDate));
+                throw new ArgumentException("The inauguration date cannot be in the future.", nameof(inaugurationDate));
 
-            // Atribui valores às propriedades
+            // Assigns values to properties
             Name = name;
             CrewCapacity = crewCapacity;
             InaugurationDate = inaugurationDate;
@@ -65,23 +65,23 @@ namespace ModelsPOO.models.SpaceAgency
 
         #endregion
 
-        #region Métodos
+        #region Methods
 
         /// <summary>
-        /// Simula a operação da estação espacial, exibindo seu nome e a capacidade de tripulantes.
+        /// Simulates the operation of the space station, displaying its name and crew capacity.
         /// </summary>
         public void OperateStation()
         {
-            Console.WriteLine($"A estação espacial {Name} com capacidade para {CrewCapacity} tripulantes está operacional desde {InaugurationDate:yyyy-MM-dd}.");
+            Console.WriteLine($"The space station {Name} with a crew capacity of {CrewCapacity} has been operational since {InaugurationDate:yyyy-MM-dd}.");
         }
 
         /// <summary>
-        /// Retorna uma descrição da estação espacial.
+        /// Returns a description of the space station.
         /// </summary>
-        /// <returns>Uma string com o nome da estação, a capacidade de tripulantes e a data de inauguração.</returns>
+        /// <returns>A string with the name of the station, crew capacity, and inauguration date.</returns>
         public string GetStationInfo()
         {
-            return $"{Name} - Capacidade de Tripulantes: {CrewCapacity} - Inauguração: {InaugurationDate:yyyy-MM-dd}";
+            return $"{Name} - Crew Capacity: {CrewCapacity} - Inauguration: {InaugurationDate:yyyy-MM-dd}";
         }
 
         #endregion

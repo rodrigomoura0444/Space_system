@@ -9,17 +9,17 @@
         #region Public Properties
 
         /// <summary>
-        /// Gets or sets the name of the mission (e.g., "Apollo 11").
+        /// Gets or sets the name of the mission like Apollo 11
         /// </summary>
         public string MissionName { get; set; }
 
         /// <summary>
-        /// Gets the date of the launch. This property is read-only externally. 
+        /// Gets the date of the launch
         /// </summary>
         public DateTime LaunchDate { get; private set; }
 
         /// <summary>
-        /// Gets the name of the rocket used for the mission. This property is read-only externally.
+        /// Gets the name of the rocket used for the mission
         /// </summary>
         public string RocketName { get; private set; }
 
@@ -30,10 +30,10 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="CLaunch"/> class with mission name, launch date, and rocket name.
         /// </summary>
-        /// <param name="missionName">The name of the mission (e.g., "Apollo 11").</param>
+        /// <param name="missionName">The name of the mission</param> 
         /// <param name="launchDate">The scheduled date for the launch (must be in the future).</param>
-        /// <param name="rocketName">The name of the rocket used for the mission (e.g., "Falcon 9").</param>
-        /// <exception cref="ArgumentException">Thrown if any parameter is invalid (e.g., empty or past date).</exception>
+        /// <param name="rocketName">The name of the rocket used for the mission </param>
+        /// <exception cref="ArgumentException">Thrown if any parameter is invalid ( empty or past date).</exception>
         public CLaunch(string missionName, DateTime launchDate, string rocketName)
         {
             if (string.IsNullOrWhiteSpace(missionName))

@@ -18,12 +18,12 @@ namespace ModelsPOO.models.Mission
         #region Properties
 
         /// <summary>
-        /// The name of the mission (e.g., "Mars 2024").
+        /// The name of the missionlike Mars 2024
         /// </summary>
         public string MissionName { get; }
 
         /// <summary>
-        /// The objective of the mission (e.g., "Land on Mars").
+        /// The objective of the mission like for example Land on MARS.
         /// </summary>
         public string Objective { get; }
 
