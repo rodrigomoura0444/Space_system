@@ -27,9 +27,11 @@ namespace trab_poo
             Console.WriteLine($"{astronaut2.Name} is ready for launch: {astronaut2.IsReadyForLaunch}");
             Console.WriteLine($"{astronaut3.Name} is ready for launch: {astronaut3.IsReadyForLaunch}");
 
-            // Keeping console open to view output
+         
+
+            
             Console.ReadLine();
-            Console.WriteLine("IPCA");
+          
           
             //ApplicationConfiguration.Initialize();
             Application.Run(new Form_login());
