@@ -19,8 +19,14 @@
 
         #region Constructors
 
+        public Astronaut()
+
         public Astronaut(string name, string rank, AstronautRole role)
+
         {
+
+        }
+            {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Astronaut name cannot be null or empty.", nameof(name));
 
