@@ -4,8 +4,8 @@
     {
         #region Public Properties
 
-        public  string Name { get; set; }
-        public  string Rank { get; set; }
+        public string Name { get; set; }
+        public string Rank { get; set; }
         public AstronautRole Role { get; set; }
 
         public bool IsReadyForLaunch { get; private set; }

@@ -5,33 +5,33 @@ namespace trab_poo
     internal static class Program
     {
         /// <summary>
-        /// Ponto de entrada principal da aplicação.
+        /// Main entry point of the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            // Criando instâncias da classe Astronaut com diferentes funções
-            Astronaut astronaut1 = new Astronaut("John Doe", "Captain",AstronautRole.Commander);
+            // Creating instances of the Astronaut class with different roles
+            Astronaut astronaut1 = new Astronaut("John Doe", "Captain", AstronautRole.Commander);
             Astronaut astronaut2 = new Astronaut("Jane Smith", "Lieutenant", AstronautRole.Pilot);
             Astronaut astronaut3 = new Astronaut("Alice Johnson", "Specialist", AstronautRole.MissionSpecialist);
 
-            // Preparando os astronautas para o lançamento
+            // Preparing the astronauts for launch
             astronaut1.PrepareForLaunch();
             astronaut2.PrepareForLaunch();
             astronaut3.PrepareForLaunch();
 
-            // Exibindo o estado de prontidão dos astronautas
+            // Displaying the readiness status of the astronauts
             Console.WriteLine("\nAstronauts' Readiness for Launch:");
             Console.WriteLine("---------------------------------");
             Console.WriteLine($"{astronaut1.Name} ({astronaut1.Rank}) - Ready: {astronaut1.IsReadyForLaunch}");
             Console.WriteLine($"{astronaut2.Name} ({astronaut2.Rank}) - Ready: {astronaut2.IsReadyForLaunch}");
             Console.WriteLine($"{astronaut3.Name} ({astronaut3.Rank}) - Ready: {astronaut3.IsReadyForLaunch}");
 
-            // Aguardando entrada do usuário para encerrar o console
-            Console.WriteLine("\nPressione Enter para continuar...");
+            // Waiting for user input to close the console
+            Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
 
-            // Inicializando a aplicação Windows Forms
+            // Initializing the Windows Forms application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form_login());
