@@ -1,6 +1,7 @@
 
 
 using Microsoft.VisualBasic.ApplicationServices;
+using ModelsPOO.Forms;
 
 namespace trab_poo
 {
@@ -36,6 +37,8 @@ namespace trab_poo
             if (username == "admin" && password == "123")
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new Dashboard().Show();
+                Hide();
             }
             else
             {
