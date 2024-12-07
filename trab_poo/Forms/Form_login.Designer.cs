@@ -42,7 +42,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(366, 373);
+            label1.Location = new Point(279, 262);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(51, 25);
@@ -56,7 +56,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.System;
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(468, 594);
+            button1.Location = new Point(442, 481);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(117, 44);
@@ -68,7 +68,7 @@
             // textBox1
             // 
             textBox1.BackColor = SystemColors.Window;
-            textBox1.Location = new Point(366, 407);
+            textBox1.Location = new Point(279, 296);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Enter your username";
@@ -78,7 +78,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(366, 518);
+            textBox2.Location = new Point(279, 407);
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
@@ -90,7 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(366, 475);
+            label2.Location = new Point(279, 364);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(91, 25);
@@ -101,11 +101,11 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(76, 24);
+            pictureBox2.Location = new Point(21, 42);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(800, 219);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.Size = new Size(745, 142);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             // 
@@ -114,7 +114,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(934, 661);
+            ClientSize = new Size(817, 572);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
             Controls.Add(textBox2);
