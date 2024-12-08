@@ -62,20 +62,20 @@ namespace trab_poo
             LoginController controller= new LoginController(this);
             await controller.HandleLoginAsync();
 
-            //string username = textBox1.Text; 
-            //string password = textBox2.Text; 
+            string username = textBox1.Text;
+            string password = textBox2.Text;
 
-            
-            //if (username == "admin" && password == "123")
-            //{
-            //    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    new Dashboard().Show();
-            //    Hide();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+
+            if (username == "admin" && password == "123")
+            {
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new Dashboard().Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -28,62 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            tttToolStripMenuItem = new ToolStripMenuItem();
-            dwdwdToolStripMenuItem = new ToolStripMenuItem();
-            dwwdwToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            panelMenu = new Panel();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            panelLogo = new Panel();
+            panelMenu.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // panelMenu
             // 
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { tttToolStripMenuItem, dwwdwToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 33);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            panelMenu.BackColor = Color.FromArgb(46, 51, 73);
+            panelMenu.Controls.Add(button4);
+            panelMenu.Controls.Add(button3);
+            panelMenu.Controls.Add(button2);
+            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(panelLogo);
+            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Location = new Point(0, 0);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(246, 615);
+            panelMenu.TabIndex = 0;
             // 
-            // tttToolStripMenuItem
+            // button4
             // 
-            tttToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dwdwdToolStripMenuItem });
-            tttToolStripMenuItem.Name = "tttToolStripMenuItem";
-            tttToolStripMenuItem.Size = new Size(46, 29);
-            tttToolStripMenuItem.Text = "ttt";
+            button4.Dock = DockStyle.Top;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Image = Properties.Resources.dashboard1;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.Location = new Point(0, 397);
+            button4.Name = "button4";
+            button4.Size = new Size(246, 92);
+            button4.TabIndex = 4;
+            button4.Text = "   Dashboard";
+            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button4.UseVisualStyleBackColor = true;
             // 
-            // dwdwdToolStripMenuItem
+            // button3
             // 
-            dwdwdToolStripMenuItem.Name = "dwdwdToolStripMenuItem";
-            dwdwdToolStripMenuItem.Size = new Size(270, 34);
-            dwdwdToolStripMenuItem.Text = "dwdwd";
+            button3.Dock = DockStyle.Top;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = SystemColors.ButtonFace;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(0, 302);
+            button3.Name = "button3";
+            button3.Size = new Size(246, 95);
+            button3.TabIndex = 3;
+            button3.Text = "   Dashboard";
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = true;
             // 
-            // dwwdwToolStripMenuItem
+            // button2
             // 
-            dwwdwToolStripMenuItem.Name = "dwwdwToolStripMenuItem";
-            dwwdwToolStripMenuItem.Size = new Size(89, 29);
-            dwwdwToolStripMenuItem.Text = "dwwdw";
+            button2.Dock = DockStyle.Top;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            button2.ForeColor = SystemColors.ButtonFace;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(0, 209);
+            button2.Name = "button2";
+            button2.Size = new Size(246, 93);
+            button2.TabIndex = 2;
+            button2.Text = "   Dashboard";
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Top;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Image = Properties.Resources.dashboard1;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 109);
+            button1.Name = "button1";
+            button1.Size = new Size(246, 100);
+            button1.TabIndex = 1;
+            button1.Text = "   Dashboard";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // panelLogo
+            // 
+            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            panelLogo.Dock = DockStyle.Top;
+            panelLogo.Location = new Point(0, 0);
+            panelLogo.Name = "panelLogo";
+            panelLogo.Size = new Size(246, 109);
+            panelLogo.TabIndex = 1;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            BackColor = Color.White;
+            ClientSize = new Size(1198, 615);
+            Controls.Add(panelMenu);
             Name = "Dashboard";
             Text = "w";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Load += Dashboard_Load;
+            panelMenu.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem tttToolStripMenuItem;
-        private ToolStripMenuItem dwdwdToolStripMenuItem;
-        private ToolStripMenuItem dwwdwToolStripMenuItem;
+        private Panel panelMenu;
+        private Button button1;
+        private Panel panelLogo;
+        private Button button4;
+        private Button button3;
+        private Button button2;
     }
 }
