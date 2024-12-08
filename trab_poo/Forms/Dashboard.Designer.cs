@@ -133,8 +133,8 @@
             BackColor = Color.White;
             ClientSize = new Size(1198, 615);
             Controls.Add(panelMenu);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Dashboard";
-            Text = "w";
             Load += Dashboard_Load;
             panelMenu.ResumeLayout(false);
             ResumeLayout(false);
