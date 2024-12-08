@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualBasic.ApplicationServices;
-using System.Windows.Forms;
-using ModelsPOO.Interfaces;
+﻿using ModelsPOO.Interfaces;
 using ModelsPOO.models.Facade;
 using ModelsPOO.models.Auth;
-using User = ModelsPOO.models.Auth.User;
+
 
 namespace ModelsPOO.Controllers
 {

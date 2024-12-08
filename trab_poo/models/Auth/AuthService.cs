@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using 
+using ModelsPOO.models.Data;
+
 
 namespace ModelsPOO.models.Auth
 {
