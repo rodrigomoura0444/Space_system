@@ -1,4 +1,6 @@
-﻿namespace ModelsPOO.Forms
+﻿
+
+namespace ModelsPOO.Forms
 {
     partial class Register
     {
@@ -152,7 +154,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(356, 367);
+            button1.Location = new Point(215, 474);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 12;
@@ -179,7 +181,7 @@
             Controls.Add(textBox1);
             Controls.Add(Submit);
             Margin = new Padding(2);
-            Name = "Register";
+            /Name = "Register";  
             Text = "Register";
             Load += Register_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -195,7 +197,7 @@
         private TextBox textBox3;
         private TextBox textBox5;
         private CheckBox checkBox1;
-        private Label Name;
+        private new Label Name;
         private Label label1;
         private Label label2;
         private Label label3;
