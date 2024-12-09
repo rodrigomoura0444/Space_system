@@ -1,6 +1,4 @@
-﻿
-
-namespace ModelsPOO.Forms
+﻿namespace ModelsPOO.Forms
 {
     partial class Register
     {
@@ -36,7 +34,7 @@ namespace ModelsPOO.Forms
             textBox3 = new TextBox();
             textBox5 = new TextBox();
             checkBox1 = new CheckBox();
-            Name = new Label();
+            nameLabel = new Label(); // Renamed from Name to nameLabel
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -101,15 +99,15 @@ namespace ModelsPOO.Forms
             checkBox1.Text = "Admin";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // Name
+            // nameLabel
             // 
-            Name.AutoSize = true;
-            Name.ForeColor = SystemColors.ButtonHighlight;
-            Name.Location = new Point(88, 206);
-            Name.Name = "Name";
-            Name.Size = new Size(39, 15);
-            Name.TabIndex = 7;
-            Name.Text = "Name";
+            nameLabel.AutoSize = true; // Changed from Name to nameLabel
+            nameLabel.ForeColor = SystemColors.ButtonHighlight;
+            nameLabel.Location = new Point(88, 206);
+            nameLabel.Name = "nameLabel"; // Changed from Name to nameLabel
+            nameLabel.Size = new Size(39, 15);
+            nameLabel.TabIndex = 7;
+            nameLabel.Text = "Name";
             // 
             // label1
             // 
@@ -154,7 +152,7 @@ namespace ModelsPOO.Forms
             // 
             // button1
             // 
-            button1.Location = new Point(215, 474);
+            button1.Location = new Point(356, 367);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 12;
@@ -173,7 +171,7 @@ namespace ModelsPOO.Forms
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(Name);
+            Controls.Add(nameLabel); // Changed from Name to nameLabel
             Controls.Add(checkBox1);
             Controls.Add(textBox5);
             Controls.Add(textBox3);
@@ -181,7 +179,7 @@ namespace ModelsPOO.Forms
             Controls.Add(textBox1);
             Controls.Add(Submit);
             Margin = new Padding(2);
-            /Name = "Register";  
+            Name = "Register";
             Text = "Register";
             Load += Register_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -197,7 +195,7 @@ namespace ModelsPOO.Forms
         private TextBox textBox3;
         private TextBox textBox5;
         private CheckBox checkBox1;
-        private new Label Name;
+        private Label nameLabel; // Renamed from Name to nameLabel
         private Label label1;
         private Label label2;
         private Label label3;
