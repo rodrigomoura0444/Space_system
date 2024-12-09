@@ -12,7 +12,7 @@ namespace trab_poo
         public Form_login()
         {
             InitializeComponent();
-            
+
         }
 
         public void NavigateToRegister()
@@ -24,13 +24,13 @@ namespace trab_poo
 
         public void NavigateToMainForm(string username, bool admin)
         {
-           Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard();
             dashboard.Show();
             Hide();
 
         }
 
-        public void DisplayMessage(string message, string caption,MessageBoxIcon icon)
+        public void DisplayMessage(string message, string caption, MessageBoxIcon icon)
         {
             MessageBox.Show(message, caption, MessageBoxButtons.OK, icon);
 
@@ -58,24 +58,24 @@ namespace trab_poo
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            
-            LoginController controller= new LoginController(this);
+
+            LoginController controller = new LoginController(this);
             await controller.HandleLoginAsync();
 
-            string username = textBox1.Text;
-            string password = textBox2.Text;
+            //string username = textBox1.Text;
+            //string password = textBox2.Text;
 
 
-            if (username == "admin" && password == "123")
-            {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new Dashboard().Show();
-                Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //if (username == "admin" && password == "123")
+            //{
+            //    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    new Dashboard().Show();
+            //    Hide();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -91,6 +91,13 @@ namespace trab_poo
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            Hide();
         }
     }
 }

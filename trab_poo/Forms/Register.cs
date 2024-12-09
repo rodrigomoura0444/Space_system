@@ -31,7 +31,7 @@ namespace ModelsPOO.Forms
         /// </summary>
         public string Password => textBox2.Text;
 
-      
+
 
         /// <summary>
         /// Gets the entered confirmation password from the input field.
@@ -71,7 +71,7 @@ namespace ModelsPOO.Forms
         /// </summary>
         public void NavigateToLogin()
         {
-            new Form_login().Show(); 
+            new Form_login().Show();
             this.Hide();
         }
         #endregion
@@ -80,26 +80,7 @@ namespace ModelsPOO.Forms
         {
             RegisterController controller = new RegisterController(this);
             await controller.HandleRegistrationAsync();
-            //int counter=0;
-            //UserRepo repositorio = new UserRepo();
-            //LoginService loginservice = new LoginService();
 
-            //List<User> usuarios = repositorio.LoadUsersAsync();
-
-            //// Verifica se o usuário existe e a senha está correta
-            //foreach (User usuario in usuarios)
-            //{
-            //    if (usuario.Name == Tb_UserSignup.Text)
-            //    {
-            //        MessageBox.Show("User Already In Use!");
-            //        counter=1;
-            //    }
-            //}
-            //if (counter == 0)
-            //{
-            //    loginservice.SignupUser(Tb_UserSignup.Text, TB_phone.Text,Tb_PassSignup.Text, cb_admin.Checked);
-
-            //}
         }
 
         private void lb_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -115,5 +96,29 @@ namespace ModelsPOO.Forms
         {
 
         }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            RegisterController controller = new RegisterController(this);
+            await controller.HandleRegistrationAsync();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form_login form_Login = new Form_login();
+            form_Login.Show();
+            Hide();
+        }
     }
-}
+    }
+
