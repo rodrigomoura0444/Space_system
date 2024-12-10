@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <None Remove="documents\poo report.pdf" />
+    <None Remove="models\Data\appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
