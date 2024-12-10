@@ -122,6 +122,9 @@
             // 
             // label2
             // 
+
+
+            
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(88, 321);
@@ -171,7 +174,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(nameLabel); // Changed from Name to nameLabel
+            Controls.Add(nameLabel); 
             Controls.Add(checkBox1);
             Controls.Add(textBox5);
             Controls.Add(textBox3);
@@ -195,7 +198,7 @@
         private TextBox textBox3;
         private TextBox textBox5;
         private CheckBox checkBox1;
-        private Label nameLabel; // Renamed from Name to nameLabel
+        private Label nameLabel;
         private Label label1;
         private Label label2;
         private Label label3;
